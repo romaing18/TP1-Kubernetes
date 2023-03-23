@@ -125,3 +125,11 @@ spec:
       port: 80
       targetPort: 80
 ```
+### Avec la commande kubectl-port forward, vérifier que phpmyadmin arrive à contacter et administrer votre base de données mysql
+Commande port-forward sur le port 8080 du fichier conf de phpmyadmin pour pouvoir acceder à l’interface graphique :
+```
+kubectl port-forward phpmyadmin-deployment-54f84d8f8f-488qf 8080:80
+Forwarding from 127.0.0.1:8080 -> 80
+Forwarding from [::1]:8080 -> 80
+Handling connection for 8080
+```
