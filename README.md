@@ -94,3 +94,17 @@ Apply la configuration de mysql :
 ```
 kubectl apply -f conf-mysql.yml
 ```
+### Créer un service associé au Pod mysql
+Voici le service associé au pod MySQL :
+```
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+spec:
+  ports:
+  - port: 3306
+  selector:
+    app: mysql
+```
