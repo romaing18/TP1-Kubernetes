@@ -108,3 +108,20 @@ spec:
   selector:
     app: mysql
 ```
+### Connecter phpmyadmin avec le Service mysql et vérifier que vous pouvez administrer cette base de données
+Voici le service qui permet de connecter phpmyadmin avec le service MySQL :
+```
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: phpmyadmin-service
+spec:
+  type: NodePort
+  selector:
+    app: phpmyadmin
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+```
